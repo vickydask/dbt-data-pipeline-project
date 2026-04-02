@@ -8,7 +8,7 @@ select
         when amount >= 150 then 'high_value'
         when amount >= 100 then 'medium_value'
         else 'low_value'
-    end as order_category
+    end as order_value_category
 
 from {{ ref('orders') }}
 where amount is not null

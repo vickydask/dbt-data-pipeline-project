@@ -1,0 +1,35 @@
+version: 2
+
+models:
+  - name: stg_orders
+    description: "Staging model for customer orders"
+    columns:
+      - name: order_id
+        description: "Primary key of the order"
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_id
+        description: "Customer identifier"
+        tests:
+          - not_null
+
+      - name: amount
+        description: "Order amount"
+        tests:
+          - not_null
+
+  - name: stg_customers
+    description: "Staging model for customers"
+    columns:
+      - name: customer_id
+        description: "Primary key of the customer"
+        tests:
+          - not_null
+          - unique
+
+      - name: customer_name
+        description: "Customer name"
+        tests:
+          - not_null
